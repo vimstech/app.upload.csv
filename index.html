@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <thead>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CSV Reader</title>
+    <link rel='stylesheet' href='./index.css'/>
+  </head>
+  <body>
+    <div class="form fieldset">
+      <input type="file" name="file" id="uploadCSV"/>
+    </div>
+    <div class="fieldset">
+      <div class="table">
+        <div class="header">
+          <a id="prevHeaders" class="action" href="javascript:void(0)"> « </a>
+          <ul class="row" id="tableHeader"></ul>
+          <a id="nextHeaders" class="action" href="javascript:void(0)"> » </a>
+        </div>
+        <ul class="body" id="tableBody">
+          <li class="row">
+          </li>
+        </ul>
+        <ul class="pagination">
+          <li><a href="javascript:void(0)" id="previousPage">Prev</a></li>
+          <li id="pageCount"></li>
+          <li><a href="javascript:void(0)" id="nextPage">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

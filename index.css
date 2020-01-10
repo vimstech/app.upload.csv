@@ -1,0 +1,99 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 15%;
+}
+
+.fieldset {
+  text-align: center;
+  margin: 5px 0px;
+  border: 1px solid lightslategray;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.fieldset .figcaption{
+  text-align: center;
+  font-weight: 600;
+  padding: 5px 10px;
+  background-color: lightslategray;
+}
+
+.form input[type='file']{
+  width: 85px;
+  padding: 10px;
+}
+
+.table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.table .body, .table .header{
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+}
+
+.table .header{
+  background-color: grey;
+}
+
+.table .header a.action {
+  position: relative;
+  width: 5px;
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  font-size: 20px;
+}
+.table .header a.action:last-child {
+  right: 16%;
+}
+.table .header a.action:first-child {
+  left: 16%;
+}
+
+.table .header .row,
+.table .row,
+.table .body .row,
+.table .row {
+  display: flex;
+  list-style: none;
+  width: 100%;
+}
+
+.table .body .row:nth-child(even){
+  background-color: #f3f3f3;
+}
+
+.table .header .row .column,
+.table .row .column,
+.table .body .row .column,
+.table .row .column {
+  flex: 1;
+  padding: 5px 10px;
+  overflow-x: hidden;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-top: 1px solid;
+  border-color: darkgray;
+}
+
+.pagination li a {
+  padding: 5px 10px;
+  text-decoration: none;
+  cursor: pointer;
+}

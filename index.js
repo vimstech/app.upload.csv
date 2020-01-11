@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
    * Add Listener to upload input to listen to change in file input
    * also create object of File reader and add listener to read file.
    * when file is choosen read file and trigger event to parse csv.
-   * [Clear input fied so that change occur again to upload new file]
+   * [Clear input fired so that change occur again to upload new file]
   */
   uploadInput.addEventListener('change', (event) => {
     var files = event.currentTarget.files;
@@ -94,10 +94,8 @@ window.addEventListener('load', () => {
     let endIndex = columns.startIndex + columns.showing;
     let headers = csv.headers.slice(startIndex, endIndex);
     csv.renderedHeaders = headers;
-    let arr = [];
-    headers.forEach((h) => {
-      arr.push('<li class="column">', h, '</li>');
-    });
+    let arr = headers.map((h) => `<li class="column"> ${h}</li>`);
+
     document.getElementById('tableHeader').innerHTML = arr.join('');
   });
 

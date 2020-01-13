@@ -25,15 +25,19 @@ window.addEventListener('load', () => {
    * [Clear input fired so that change occur again to upload new file]
   */
   uploadInput.addEventListener('change', (event) => {
-    var files = event.currentTarget.files;
-    if (files && files.length > 0) {
+    var files = event.currentTarget.files, file;
+    if (files && files.length > 0 && (file = files[0])) {
       var reader = new FileReader();
       reader.onload = (e) => {
         var result = e.target.result;
         csv.data = result;
         document.dispatchEvent(new Event('parseCSV'));
       }
-      reader.readAsText(files[0]);
+      if(file.name.endsWith('.csv') && file.type == 'text/csv'){
+        reader.readAsText(file);
+      }else{
+        alert(`You've choosen wrong file, Please select a csv file`)
+      }
       event.currentTarget.value = '';
     }
   });
